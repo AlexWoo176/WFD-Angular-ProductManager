@@ -9,6 +9,8 @@ import { EditComponent } from './books/edit/edit.component';
 import { HomeComponent } from './books/home/home.component';
 import { ListComponent } from './books/list/list.component';
 import { AppRoutingModule } from './app-routing.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
