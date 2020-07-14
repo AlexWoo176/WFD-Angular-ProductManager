@@ -1,1 +1,26 @@
-<p>add works!</p>
+<div class="full-content">
+  <div *ngIf="message">
+    <p style="color: red">{{ message }}</p>
+  </div>
+  <form #bookForm="ngForm" (ngSubmit)="createBook(bookForm)">
+    <div class="form-group">
+      <label>Tiêu đề: </label>
+      <input name="title" type="text" class="form-control" placeholder="Nhập tiêu đề" ngModel="">
+    </div>
+    <div class="form-group">
+      <label>Tác giả: </label>
+      <input name="author" type="text" class="form-control" placeholder="Nhập tác giả" ngModel="">
+    </div>
+
+    <div class="form-group">
+      <label>Mô tả: </label>
+      <textarea type="text" name="description" class="form-control" rows="4" placeholder="Nhập mô tả"
+                ngModel=""></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" style="margin: auto">Thêm sách</button>
+      <button type="button" class="btn btn-success" style="margin: 10px" [routerLink]="['/list']">Back</button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>
